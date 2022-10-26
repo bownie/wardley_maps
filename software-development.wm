@@ -1,0 +1,56 @@
+title Software Development Practice
+anchor User [0.95, 0.77]
+component Business [0.94, 0.60] label [-74, 1]
+component Developer [0.69, 0.36]
+component Software Development [0.89, 0.52] label [-128, -28]
+component Editor [0.48, 0.27] label [-56, 4]
+evolve Editor 0.80
+component Compiler Interpreter [0.38, 0.20] label [-81, -10]
+evolve Compiler Interpreter 0.71
+component Runtime [0.27, 0.43] label [5, -10]
+evolve Runtime 0.78 
+component Workstation [0.64, 0.21] label [-94, -10]
+evolve Workstation 0.72
+component Source Control [0.52, 0.23] label [-90, -15]
+evolve Source Control 0.80
+component Delivery System [0.74, 0.41] label [27, -11]
+evolve Delivery System 0.61
+evolve Operating System  0.68 label [16, 7]
+component Operating System [0.32, 0.17] label [-77, -6]
+component Automated Testing [0.75, 0.32] label [-70, -28]
+component Software Architecture [0.86, 0.34] label [24, -8]
+evolve Software Architecture 0.60   
+component Software Component [0.77, 0.17] label [-77, -17]
+component Continuous Integration [0.80, 0.36] label [37, -6]
+evolve Continuous Integration 0.68 label [37, -13]
+
+User->Business
+Business->Software Development
+Business->Software Delivery
+Software Delivery->Delivery System
+Developer->Compiler Interpreter
+Delivery System->Software Development
+Developer->Workstation
+Workstation->Operating System
+Workstation->Source Control
+Workstation->Compiler Interpreter
+Workstation->Editor
+Workstation->Compiler Interpreter
+Software Development->Software Architecture
+Software Architecture->Software Component
+Software Component->Developer
+Software Architecture->Automated Testing
+Automated Testing->Developer
+Software Development->Continuous Integration
+Continuous Integration->Automated Testing
+User->Delivery System
+Delivery System->Runtime
+Delivery System->Automated Testing
+annotation 1 [0.48, 0.12] Source Control, Editors, Compilers, OS evolves to commodity from bespoke solution 
+annotation 2 [0.89, 0.31] Higher level components of software, architecture and methodologies also evolve
+annotation 3 [0.72, 0.68] Delivery system and runtime evolves
+annotations [0.14, 0.02]
+
+#note +a generic note appeared [0.23, 0.33]
+
+style wardley
